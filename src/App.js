@@ -129,7 +129,7 @@ class App extends Component {
         <Header />
         <main className='flex main'>
           <Folders folders={this.state.folders}/>
-          <Notes active={this.state.active} notes={this.state.notes}/>
+          <Notes notes={this.state.notes}/>
         </main>
       </div>
     );
