@@ -25,10 +25,8 @@ function Notes(props) {
           )}
         </ul>
       </div>
-
     )
   }
-  
 }
 
 export default Notes;
