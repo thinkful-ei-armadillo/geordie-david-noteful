@@ -129,7 +129,7 @@ class App extends Component {
       <div className="App">
         <Route exact path='/' render={props => <Home match={props.match} folders={this.state.folders} notes={this.state.notes} />} />
         <Route path='/FolderPage/:folderId' render={props => <FolderPage match={props.match} folders={this.state.folders} notes={this.state.notes} />} />
-        <Route path='/NotePage/:NoteId' component={NotePage}/>
+    <Route path='/NotePage/:NoteId' render={props => <NotePage match={props.match} folders={this.state.folders} notes={this.state.notes}/> } />
       </div>
     );
   }
