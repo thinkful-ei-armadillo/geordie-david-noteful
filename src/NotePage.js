@@ -8,7 +8,7 @@ function NotePage (props) {
         <div>
             <Header />
             <main className='flex main'>
-                <ActiveFolder folders={props.folders} match={props.match} notes={props.notes} />
+                <ActiveFolder history={props.history}folders={props.folders} match={props.match} notes={props.notes} />
                 <NoteDetails folders={props.folders} match={props.match} notes={props.notes} />
             </main>
         </div>
