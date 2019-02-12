@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Home from './Home'
+import Home from './Home';
+import FolderPage from './FolderPage';
+import NotePage from './NotePage';
 import './App.css';
 
 class App extends Component {
@@ -126,8 +128,8 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path='/' render={props => <Home match={props.match} folders={this.state.folders} notes={this.state.notes} />} />
-          {/* <Route path='/FolderPage/:' component={FolderPage}/> */}
-          {/* <Route path='/NotePage/:' component={NotePage}/> */}
+        <Route path='/FolderPage/:folderId' render={props => <FolderPage match={props.match} folders={this.state.folders} notes={this.state.notes} />} />
+        <Route path='/NotePage/:NoteId' component={NotePage}/>
       </div>
     );
   }

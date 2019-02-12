@@ -1,17 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Notes(props) {
-
-  if(props.active) {
+  console.log(props.match);
+  if(props.match) {
       const filteredNotes = props.notes.filter(note =>
-      note.folderId === props.active
+      note.folderId === props.match.params.folderId
     );
+    console.log(filteredNotes);
 
     return (
       <div>
         <ul>
           {filteredNotes.map((note, index) =>
-            <li key={index}><h2>{note.name}</h2>{note.modified}</li>
+            <li key={index}>
+              <Link to={`/NotePage/${note.id}`}>
+                <h2>{note.name}</h2>
+              </Link>
+              {note.modified}
+            </li>
           )}
         </ul>
       </div>
@@ -21,8 +28,13 @@ function Notes(props) {
       <div>
         <ul>
           {props.notes.map((note, index) =>
-            <li key={index}><h2>{note.name}</h2>{note.modified}</li>
-          )}
+            <li key={index}>
+              <Link to={`/NotePage/${note.id}`}>
+                <h2>{note.name}</h2>
+              </Link>
+              {note.modified}
+            </li>
+        )}
         </ul>
       </div>
     )
